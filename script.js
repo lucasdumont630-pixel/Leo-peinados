@@ -49,7 +49,7 @@ const tramosDe = (d) => CONFIG.horario[d.getDay()] || [];
 const sameDay = (a, b) => a.toDateString() === b.toDateString();
 const waLink = (txt) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(txt)}`;
 
-document.documentElement.classList.remove("no-js");
+const setInvalid = (el, bad) => (bad ? el.setAttribute("aria-invalid", "true") : el.removeAttribute("aria-invalid"));
 
 const toastEl = $("#toast");
 let toastTimer;
@@ -291,8 +291,8 @@ function actualizar() {
 
 function validar() {
   const f = faltan();
-  $("#f-nombre").toggleAttribute("aria-invalid", !$("#f-nombre").value.trim());
-  fServicio.toggleAttribute("aria-invalid", !fServicio.value);
+  setInvalid($("#f-nombre"), !$("#f-nombre").value.trim());
+  setInvalid(fServicio, !fServicio.value);
   fDias.classList.toggle("is-invalid", !sel.dia);
   fHoras.classList.toggle("is-invalid", !sel.hora);
   if (f.length) {
@@ -315,11 +315,15 @@ $("#f-copy").addEventListener("click", () => { if (validar()) copyText(mensaje()
 items.forEach((li) => {
   li.style.cursor = "pointer";
   li.title = "Reservar este servicio";
-  li.addEventListener("click", () => {
+  li.tabIndex = 0;
+  const elegir = () => {
     fServicio.value = $("h3", li).textContent;
     actualizar();
     $("#reservar").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-  });
+    $("#f-nombre").focus({ preventScroll: true });
+  };
+  li.addEventListener("click", elegir);
+  li.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); elegir(); } });
 });
 
 pintarDias();
@@ -380,7 +384,7 @@ actualizar();
   let timer = null, paused = reduce, hover = false;
   const tick = () => { if (!hover && !document.hidden) go(idx + 1); };
   function render() {
-    playBtn.textContent = paused ? "▶" : "❚❚";
+    playBtn.classList.toggle("is-paused", paused);
     playBtn.setAttribute("aria-label", paused ? "Reanudar el pase de fotos" : "Pausar el pase de fotos");
   }
   function start() { clearInterval(timer); if (!paused) timer = setInterval(tick, CONFIG.segundosPorFoto * 1000); render(); }

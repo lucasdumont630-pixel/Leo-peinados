@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" class="no-js">
+<html lang="es">
 <head>
 <!-- HEAD:START -->
 <meta charset="utf-8">
@@ -11,6 +11,9 @@
 <meta property="og:title" content="Leo Peinados · Peluquería">
 <meta property="og:description" content="Cortes, color, peinados de evento y novias. Reserva por WhatsApp en un minuto.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://leo-peinados.vercel.app/">
+<link rel="canonical" href="https://leo-peinados.vercel.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Manrope:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -84,7 +87,6 @@
   <section class="band" id="servicios">
     <div class="wrap">
       <header class="head">
-        <p class="kicker">Carta de servicios</p>
         <h2>Precios claros antes de empezar</h2>
         <p>Los precios son de partida. Pelo largo o muy denso puede subir algo; siempre te lo decimos antes de coger las tijeras. La duración es aproximada.</p>
       </header>
@@ -118,7 +120,6 @@
   <section class="band band--tint" id="metodo">
     <div class="wrap">
       <header class="head">
-        <p class="kicker">Cómo trabajamos</p>
         <h2>Una cita, cuatro pasos</h2>
       </header>
       <ol class="steps">
@@ -134,11 +135,8 @@
   <section class="band" id="galeria">
     <div class="wrap">
       <header class="head head--row">
-        <div>
-          <p class="kicker">Trabajos</p>
-          <h2>Del sillón a la calle</h2>
-        </div>
-        <a class="ig-link" href="#" data-instagram-link target="_blank" rel="noopener">Más en Instagram <span data-instagram-text>@leo_corizzo</span> →</a>
+        <h2>Del sillón a la calle</h2>
+        <a class="ig-link" href="#" data-instagram-link target="_blank" rel="noopener">Más en Instagram <span data-instagram-text>@leo_corizzo</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </header>
 
       <!-- Las fotos se configuran en script.js → CONFIG.fotos -->
@@ -147,9 +145,9 @@
         <div class="carousel__bar">
           <div class="carousel__dots" id="carousel-dots"></div>
           <div class="carousel__nav">
-            <button type="button" class="round" id="carousel-play" aria-label="Pausar el pase de fotos">❚❚</button>
-            <button type="button" class="round" id="carousel-prev" aria-label="Foto anterior">←</button>
-            <button type="button" class="round" id="carousel-next" aria-label="Foto siguiente">→</button>
+            <button type="button" class="round" id="carousel-play" aria-label="Pausar el pase de fotos"><svg class="ico ico--pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="ico ico--play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
+            <button type="button" class="round" id="carousel-prev" aria-label="Foto anterior"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+            <button type="button" class="round" id="carousel-next" aria-label="Foto siguiente"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
         </div>
       </div>
@@ -160,7 +158,6 @@
   <section class="band band--tint" id="opiniones">
     <div class="wrap">
       <header class="head">
-        <p class="kicker">Opiniones</p>
         <h2>Lo que cuentan al salir</h2>
         <p class="note">Textos de ejemplo: sustitúyelos por reseñas reales de tus clientes.</p>
       </header>
@@ -176,7 +173,6 @@
   <section class="band" id="reservar">
     <div class="wrap booking">
       <div class="booking__intro">
-        <p class="kicker">Reservar</p>
         <h2>Elige día y hora</h2>
         <p>Marca lo que te viene bien y te preparamos el mensaje. Lo envías por WhatsApp y te confirmamos el hueco.</p>
         <p class="phone-line">¿Prefieres llamar? <span class="phone" data-phone-text>600 000 000</span>
@@ -186,7 +182,7 @@
       <form class="form" id="booking-form" novalidate>
         <div class="field">
           <label for="f-nombre">Tu nombre</label>
-          <input id="f-nombre" name="nombre" autocomplete="name" placeholder="Ej. Marta" required>
+          <input id="f-nombre" name="nombre" autocomplete="given-name" placeholder="Ej. Marta" maxlength="60" required>
         </div>
         <div class="field">
           <label for="f-servicio">Servicio</label>
@@ -202,7 +198,7 @@
         </fieldset>
         <div class="field">
           <label for="f-notas">Algo que debamos saber <span class="opt">(opcional)</span></label>
-          <textarea id="f-notas" name="notas" rows="2" placeholder="Largo del pelo, color actual, foto de referencia que nos enviarás…"></textarea>
+          <textarea id="f-notas" name="notas" rows="2" maxlength="500" placeholder="Largo del pelo, color actual, foto de referencia que nos enviarás…"></textarea>
         </div>
 
         <div class="preview">
@@ -222,7 +218,6 @@
   <section class="band band--tint" id="faq">
     <div class="wrap faq">
       <header class="head">
-        <p class="kicker">Preguntas</p>
         <h2>Antes de venir</h2>
       </header>
       <div class="faq__list">
@@ -239,7 +234,6 @@
   <section class="band band--ink" id="contacto">
     <div class="wrap contact">
       <div class="contact__info">
-        <p class="kicker">Contacto</p>
         <h2>Ven a vernos</h2>
         <dl class="contact__list">
           <div><dt>Dirección</dt><dd data-address-text>Calle Ejemplo 1, Ciudad</dd></div>
