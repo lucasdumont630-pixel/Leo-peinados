@@ -43,19 +43,22 @@
 <main id="main">
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <canvas class="hero__strands" id="strands" aria-hidden="true"></canvas>
     <div class="wrap hero__inner">
       <div class="hero__copy">
-        <p class="kicker">Peluquería · Color · Novias</p>
-        <h1>Pelo que te <em>reconoce</em> al espejo.</h1>
+        <h1>Que te reconozcas <em>en el espejo.</em></h1>
         <p class="lead">Cortes pensados para cómo te peinas de verdad, color que envejece bien y recogidos que llegan enteros al final de la fiesta.</p>
+        <p class="hero__where"><span data-hero-where>Peluquería de mujer y hombre</span></p>
         <div class="hero__cta">
           <a href="#reservar" class="btn">Elegir día y hora</a>
-          <a href="#servicios" class="btn btn--line">Ver carta de precios</a>
+          <a href="#servicios" class="btn btn--line hero__secondary">Ver carta de precios</a>
         </div>
       </div>
 
+      <div class="hero__side">
+      <!-- Foto de portada: se configura en script.js → CONFIG.portada -->
+      <figure class="hero__photo" id="hero-photo" hidden></figure>
       <aside class="ticket" aria-label="Estado del salón">
         <div class="ticket__top">
           <span class="ticket__label">Hoy en el salón</span>
@@ -69,7 +72,11 @@
           <div><dt>Balayage</dt><dd>desde 60 €</dd></div>
           <div><dt>Peinado evento</dt><dd>desde 35 €</dd></div>
         </dl>
+        <hr>
+        <p class="ticket__where" data-address-text>Calle Ejemplo 1, Ciudad</p>
+        <a href="#" class="btn btn--wa btn--sm ticket__wa" data-whatsapp-link target="_blank" rel="noopener">Pedir cita por WhatsApp</a>
       </aside>
+      </div>
     </div>
   </section>
 

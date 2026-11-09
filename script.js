@@ -6,6 +6,10 @@ const CONFIG = {
   whatsapp: "34600000000",
   telefono: "600 000 000",
   direccion: "Calle Ejemplo 1, Ciudad",
+  // Barrio o ciudad, para la frase de la portada ("Peluquería de mujer y hombre en …")
+  ciudad: "",
+  // Foto grande de la portada. Vacío = se ven las líneas animadas.
+  portada: { src: "", alt: "" },
   instagram: "https://www.instagram.com/leo_corizzo/",
   instagramTexto: "@leo_corizzo",
   // Fotos del carrusel: pon los archivos en la carpeta img/ y añádelos aquí.
@@ -83,6 +87,22 @@ $$("[data-whatsapp-link]").forEach((a) => (a.href = waLink("¡Hola Leo! Me gusta
 $$("[data-map-link]").forEach((a) => (a.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.direccion)));
 $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 $$("[data-copy-phone]").forEach((b) => b.addEventListener("click", () => copyText(CONFIG.telefono, "Teléfono copiado")));
+
+/* ---------- portada: ubicación, foto y barra móvil ---------- */
+if (CONFIG.ciudad) $$("[data-hero-where]").forEach((el) => (el.textContent = `Peluquería de mujer y hombre en ${CONFIG.ciudad}`));
+if (CONFIG.portada && CONFIG.portada.src) {
+  const fig = $("#hero-photo");
+  const img = new Image();
+  img.src = CONFIG.portada.src;
+  img.alt = CONFIG.portada.alt || "Trabajo de Leo";
+  img.decoding = "async";
+  img.fetchPriority = "high";
+  fig.appendChild(img);
+  fig.hidden = false;
+  $("#hero").classList.add("hero--photo");
+}
+const dock = $(".dock");
+new IntersectionObserver(([e]) => dock.classList.toggle("is-shown", !e.isIntersecting), { threshold: 0.15 }).observe($("#hero"));
 
 /* ---------- cabecera y menú ---------- */
 const header = $(".header");
@@ -384,7 +404,7 @@ actualizar();
 /* ---------- mechones animados del portada ---------- */
 (function strands() {
   const cv = $("#strands");
-  if (!cv || !cv.getContext) return;
+  if (!cv || !cv.getContext || $("#hero").classList.contains("hero--photo")) return;
   const ctx = cv.getContext("2d");
   const reduce = matchMedia("(prefers-reduced-motion: reduce)");
   let w = 0, h = 0, colors = {}, running = true, raf = 0;
