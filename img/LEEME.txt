@@ -1,0 +1,3 @@
+Pon aquí las fotos de los trabajos (JPG o WebP, mejor verticales 4:5, unos 1200 px de alto).
+Después añádelas en script.js, dentro de CONFIG.fotos, por ejemplo:
+  { src: "img/balayage.jpg", texto: "Balayage miel" },

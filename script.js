@@ -6,8 +6,19 @@ const CONFIG = {
   whatsapp: "34600000000",
   telefono: "600 000 000",
   direccion: "Calle Ejemplo 1, Ciudad",
-  instagram: "https://instagram.com/leopeinados",
-  instagramTexto: "@leopeinados",
+  instagram: "https://www.instagram.com/leo_corizzo/",
+  instagramTexto: "@leo_corizzo",
+  // Fotos del carrusel: pon los archivos en la carpeta img/ y añádelos aquí.
+  // Mientras "src" esté vacío se muestra un hueco de color con el texto.
+  fotos: [
+    { src: "", texto: "Balayage miel sobre castaño" },
+    { src: "", texto: "Recogido de novia" },
+    { src: "", texto: "Bob a la mandíbula" },
+    { src: "", texto: "Ondas al agua" },
+    { src: "", texto: "Degradado bajo" },
+    { src: "", texto: "Trenzas de raíz" },
+  ],
+  segundosPorFoto: 4,
   // Horario. 0 = domingo, 1 = lunes … 6 = sábado. [] = cerrado
   horario: {
     1: [],
@@ -294,6 +305,81 @@ items.forEach((li) => {
 pintarDias();
 pintarHoras();
 actualizar();
+
+/* ---------- carrusel de fotos ---------- */
+(function carousel() {
+  const track = $("#carousel-track");
+  if (!track) return;
+  const dots = $("#carousel-dots");
+  const playBtn = $("#carousel-play");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  CONFIG.fotos.forEach((f, i) => {
+    const fig = document.createElement("figure");
+    fig.className = "slide" + (f.src ? "" : " slide--empty");
+    fig.dataset.tone = String((i % 6) + 1);
+    fig.setAttribute("aria-roledescription", "foto");
+    fig.setAttribute("aria-label", `${i + 1} de ${CONFIG.fotos.length}`);
+    if (f.src) {
+      const img = new Image();
+      img.src = f.src;
+      img.alt = f.texto || "Trabajo de Leo";
+      img.loading = "lazy";
+      img.decoding = "async";
+      fig.appendChild(img);
+    }
+    if (f.texto) {
+      const c = document.createElement("figcaption");
+      c.textContent = f.texto;
+      fig.appendChild(c);
+    }
+    track.appendChild(fig);
+    const d = document.createElement("button");
+    d.type = "button";
+    d.setAttribute("aria-label", `Ir a la foto ${i + 1}`);
+    d.addEventListener("click", () => { go(i); stop(); });
+    dots.appendChild(d);
+  });
+
+  const slides = $$(".slide", track);
+  const step = () => (slides[1] ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth);
+  const perView = () => Math.max(1, Math.round(track.clientWidth / step()));
+  const maxIndex = () => Math.max(0, slides.length - perView());
+  let idx = 0;
+  function go(i) {
+    idx = i > maxIndex() ? 0 : i < 0 ? maxIndex() : i;
+    track.scrollTo({ left: slides[idx].offsetLeft - slides[0].offsetLeft, behavior: reduce ? "auto" : "smooth" });
+  }
+  function syncDots() {
+    idx = Math.min(Math.round(track.scrollLeft / step()), maxIndex());
+    $$("button", dots).forEach((d, j) => d.setAttribute("aria-current", String(j >= idx && j < idx + perView())));
+  }
+  track.addEventListener("scroll", () => requestAnimationFrame(syncDots), { passive: true });
+  addEventListener("resize", syncDots);
+  syncDots();
+
+  let timer = null, paused = reduce, hover = false;
+  const tick = () => { if (!hover && !document.hidden) go(idx + 1); };
+  function render() {
+    playBtn.textContent = paused ? "▶" : "❚❚";
+    playBtn.setAttribute("aria-label", paused ? "Reanudar el pase de fotos" : "Pausar el pase de fotos");
+  }
+  function start() { clearInterval(timer); if (!paused) timer = setInterval(tick, CONFIG.segundosPorFoto * 1000); render(); }
+  function stop() { paused = true; start(); }
+  playBtn.addEventListener("click", () => { paused = !paused; start(); });
+  $("#carousel-prev").addEventListener("click", () => { go(idx - 1); stop(); });
+  $("#carousel-next").addEventListener("click", () => { go(idx + 1); stop(); });
+  const car = $("#carousel");
+  car.addEventListener("pointerenter", () => (hover = true));
+  car.addEventListener("pointerleave", () => (hover = false));
+  car.addEventListener("focusin", () => (hover = true));
+  car.addEventListener("focusout", () => (hover = false));
+  track.addEventListener("touchstart", stop, { passive: true });
+  track.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); go(idx + 1); stop(); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); go(idx - 1); stop(); }
+  });
+  start();
+})();
 
 /* ---------- mechones animados del portada ---------- */
 (function strands() {
