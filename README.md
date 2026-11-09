@@ -4,10 +4,13 @@ Web de una página para la peluquería Leo Peinados. HTML, CSS y JS sin dependen
 
 ## Qué cambiar antes de publicar
 
-- **`script.js` → `CONFIG`**: número de WhatsApp, teléfono, dirección, Instagram y horario (se usa para el aviso "Abierto ahora").
+- **`script.js` → `CONFIG`**: número de WhatsApp, teléfono, dirección, Instagram y horario. El horario genera la tabla de horarios, el aviso "Abierto/Cerrado" y los días y horas que se pueden elegir al reservar.
 - **`index.html`**:
   - Servicios y precios (sección `#servicios`).
-  - Horario visible (sección `#contacto`), igual que en `CONFIG`.
   - Las reseñas son textos de ejemplo: cámbialas por reseñas reales.
-  - Las cifras del principio (+10 años, 4,9★) también son de ejemplo.
-- **Fotos**: la galería y "Sobre Leo" usan degradados de relleno. Pon las fotos en `img/` y asígnalas en `styles.css` (`.g--1` … `.g--6`, `.about__img`) con `background-image: url(img/foto.jpg)`.
+  - Duraciones aproximadas de cada servicio.
+- **Fotos**: la galería y "Sobre Leo" usan degradados de relleno. Pon las fotos en `img/` y asígnalas en `styles.css` (`.tile[data-tone="1"]` … `"6"`) cambiando el fondo por `background: url(img/foto.jpg) center / cover`.
+
+## Versión de un solo archivo
+
+`python3 tools/build-artifact.py salida.html` junta HTML, CSS y JS en un único archivo (sirve para vistas previas).

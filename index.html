@@ -1,296 +1,261 @@
 <!doctype html>
 <html lang="es" class="no-js">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Leo Peinados · Peluquería y peinados</title>
-  <meta name="description" content="Leo Peinados: cortes, color, peinados para eventos y tratamientos capilares. Reserva tu cita en un minuto por WhatsApp.">
-  <meta name="theme-color" content="#1c1917">
-  <meta property="og:title" content="Leo Peinados · Peluquería y peinados">
-  <meta property="og:description" content="Cortes, color, peinados para eventos y tratamientos. Reserva tu cita por WhatsApp.">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HairSalon",
-    "name": "Leo Peinados",
-    "description": "Peluquería: cortes, color, peinados para eventos y tratamientos capilares."
-  }
-  </script>
+<!-- HEAD:START -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leo Peinados</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Leo Peinados: cortes, color, peinados de evento y novias, tratamientos. Elige día y hora y reserva por WhatsApp.">
+<meta name="theme-color" content="#7d1d3f">
+<meta property="og:title" content="Leo Peinados · Peluquería">
+<meta property="og:description" content="Cortes, color, peinados de evento y novias. Reserva por WhatsApp en un minuto.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Manrope:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- HEAD:END -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HairSalon","name":"Leo Peinados","description":"Peluquería: cortes, color, peinados de evento y novias, tratamientos capilares."}
+</script>
 </head>
 <body>
-  <a class="skip" href="#main">Saltar al contenido</a>
+<!-- BODY:START -->
+<a class="skip" href="#main">Saltar al contenido</a>
 
-  <header class="header" id="top">
-    <div class="container header__inner">
-      <a href="#top" class="logo" aria-label="Leo Peinados, inicio">
-        <span class="logo__mark" aria-hidden="true">L</span>
-        <span>Leo <em>Peinados</em></span>
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav" id="nav">
-        <a href="#servicios">Servicios</a>
-        <a href="#nosotros">Sobre Leo</a>
-        <a href="#galeria">Galería</a>
-        <a href="#opiniones">Opiniones</a>
-        <a href="#contacto">Contacto</a>
-        <a href="#reservar" class="btn btn--small">Reservar cita</a>
-      </nav>
+<header class="header" id="top">
+  <div class="wrap header__inner">
+    <a href="#top" class="logo" aria-label="Leo Peinados, inicio">Leo<span>Peinados</span></a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú"><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#metodo">Cómo trabajamos</a>
+      <a href="#galeria">Trabajos</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#reservar" class="btn btn--sm">Reservar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas class="hero__strands" id="strands" aria-hidden="true"></canvas>
+    <div class="wrap hero__inner">
+      <div class="hero__copy">
+        <p class="kicker">Peluquería · Color · Novias</p>
+        <h1>Pelo que te <em>reconoce</em> al espejo.</h1>
+        <p class="lead">Cortes pensados para cómo te peinas de verdad, color que envejece bien y recogidos que llegan enteros al final de la fiesta.</p>
+        <div class="hero__cta">
+          <a href="#reservar" class="btn">Elegir día y hora</a>
+          <a href="#servicios" class="btn btn--line">Ver carta de precios</a>
+        </div>
+      </div>
+
+      <aside class="ticket" aria-label="Estado del salón">
+        <div class="ticket__top">
+          <span class="ticket__label">Hoy en el salón</span>
+          <span class="status" id="hero-status">Horario</span>
+        </div>
+        <p class="ticket__big" id="hero-next">Martes a sábado</p>
+        <p class="ticket__small" id="hero-sub">Mira el horario completo más abajo.</p>
+        <hr>
+        <dl class="ticket__facts">
+          <div><dt>Corte mujer</dt><dd>desde 25 €</dd></div>
+          <div><dt>Balayage</dt><dd>desde 60 €</dd></div>
+          <div><dt>Peinado evento</dt><dd>desde 35 €</dd></div>
+        </dl>
+      </aside>
     </div>
-  </header>
+  </section>
 
-  <main id="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__text reveal">
-          <p class="eyebrow">Peluquería · Color · Eventos</p>
-          <h1>Tu pelo, <span class="accent">a tu manera</span>.</h1>
-          <p class="lead">Cortes que se adaptan a ti, color que dura y peinados que aguantan toda la fiesta. Sin prisas y con asesoramiento de verdad.</p>
-          <div class="hero__cta">
-            <a href="#reservar" class="btn">Reservar cita</a>
-            <a href="#servicios" class="btn btn--ghost">Ver servicios y precios</a>
-          </div>
-          <ul class="hero__facts">
-            <li><strong>+10</strong> años de oficio</li>
-            <li><strong>4,9★</strong> valoración media</li>
-            <li><strong>1 min</strong> para reservar</li>
-          </ul>
-        </div>
-        <div class="hero__visual reveal" aria-hidden="true">
-          <div class="blob"></div>
-          <div class="hero__card hero__card--a">✂️ Corte + peinado</div>
-          <div class="hero__card hero__card--b">🎨 Mechas balayage</div>
-          <div class="hero__card hero__card--c">💍 Novias e invitadas</div>
-        </div>
+  <!-- SERVICIOS -->
+  <section class="band" id="servicios">
+    <div class="wrap">
+      <header class="head">
+        <p class="kicker">Carta de servicios</p>
+        <h2>Precios claros antes de empezar</h2>
+        <p>Los precios son de partida. Pelo largo o muy denso puede subir algo; siempre te lo decimos antes de coger las tijeras. La duración es aproximada.</p>
+      </header>
+
+      <div class="chips" role="group" aria-label="Filtrar servicios">
+        <button type="button" class="chip" aria-pressed="true" data-filter="all">Todo</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="corte">Corte</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="color">Color</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="peinado">Peinados</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="tratamiento">Tratamientos</button>
       </div>
-    </section>
 
-    <!-- SERVICIOS -->
-    <section class="section" id="servicios">
-      <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow">Servicios</p>
-          <h2>Lo que hacemos</h2>
-          <p>Precios orientativos. El precio final depende del largo y del estado del pelo; te lo confirmamos antes de empezar.</p>
-        </header>
-
-        <div class="tabs reveal" role="tablist" aria-label="Categorías de servicios">
-          <button role="tab" aria-selected="true" data-filter="all">Todo</button>
-          <button role="tab" aria-selected="false" data-filter="corte">Corte</button>
-          <button role="tab" aria-selected="false" data-filter="color">Color</button>
-          <button role="tab" aria-selected="false" data-filter="peinado">Peinados</button>
-          <button role="tab" aria-selected="false" data-filter="tratamiento">Tratamientos</button>
-        </div>
-
-        <!-- Cambia nombres, descripciones y precios aquí -->
-        <ul class="services">
-          <li class="service reveal" data-cat="corte">
-            <div><h3>Corte mujer</h3><p>Lavado, corte y secado con forma.</p></div>
-            <span class="price">desde 25 €</span>
-          </li>
-          <li class="service reveal" data-cat="corte">
-            <div><h3>Corte hombre</h3><p>Corte a tijera o máquina y acabado.</p></div>
-            <span class="price">desde 14 €</span>
-          </li>
-          <li class="service reveal" data-cat="corte">
-            <div><h3>Corte infantil</h3><p>Hasta 12 años.</p></div>
-            <span class="price">desde 10 €</span>
-          </li>
-          <li class="service reveal" data-cat="color">
-            <div><h3>Tinte raíz</h3><p>Color uniforme y cobertura de canas.</p></div>
-            <span class="price">desde 30 €</span>
-          </li>
-          <li class="service reveal" data-cat="color">
-            <div><h3>Mechas / balayage</h3><p>Aclarado a mano alzada, natural y luminoso.</p></div>
-            <span class="price">desde 60 €</span>
-          </li>
-          <li class="service reveal" data-cat="color">
-            <div><h3>Matiz / gloss</h3><p>Corrige tonos y aporta brillo.</p></div>
-            <span class="price">desde 18 €</span>
-          </li>
-          <li class="service reveal" data-cat="peinado">
-            <div><h3>Peinado de evento</h3><p>Recogidos, semirrecogidos y ondas.</p></div>
-            <span class="price">desde 35 €</span>
-          </li>
-          <li class="service reveal" data-cat="peinado">
-            <div><h3>Novias</h3><p>Prueba previa + peinado el día de la boda.</p></div>
-            <span class="price">consultar</span>
-          </li>
-          <li class="service reveal" data-cat="peinado">
-            <div><h3>Trenzas</h3><p>Boxeo, raíz, espiga y más.</p></div>
-            <span class="price">desde 15 €</span>
-          </li>
-          <li class="service reveal" data-cat="tratamiento">
-            <div><h3>Hidratación profunda</h3><p>Para pelo seco o dañado.</p></div>
-            <span class="price">desde 20 €</span>
-          </li>
-          <li class="service reveal" data-cat="tratamiento">
-            <div><h3>Alisado de keratina</h3><p>Pelo liso y sin encrespamiento durante meses.</p></div>
-            <span class="price">desde 90 €</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- SOBRE LEO -->
-    <section class="section section--alt" id="nosotros">
-      <div class="container about">
-        <div class="about__img reveal" role="img" aria-label="Foto de Leo en el salón (pendiente de añadir)">
-          <span>Tu foto aquí</span>
-        </div>
-        <div class="about__text reveal">
-          <p class="eyebrow">Sobre Leo</p>
-          <h2>Más de una década cuidando tu pelo</h2>
-          <p>En Leo Peinados cada cita empieza con una conversación: qué te gusta, cómo te peinas a diario y cuánto tiempo quieres dedicarle. A partir de ahí te proponemos el corte o el color que mejor encaja contigo.</p>
-          <p>Trabajamos con productos profesionales y respetuosos con el cabello, y nos formamos cada año en las últimas técnicas.</p>
-          <ul class="checks">
-            <li>Asesoramiento personalizado</li>
-            <li>Productos profesionales</li>
-            <li>Ambiente tranquilo, sin prisas</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALERÍA -->
-    <section class="section" id="galeria">
-      <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow">Galería</p>
-          <h2>Algunos trabajos</h2>
-          <p>Sustituye estos huecos por fotos reales de tus trabajos (carpeta <code>img/</code>).</p>
-        </header>
-        <div class="gallery">
-          <figure class="g g--1 reveal"><figcaption>Balayage</figcaption></figure>
-          <figure class="g g--2 reveal"><figcaption>Recogido de novia</figcaption></figure>
-          <figure class="g g--3 reveal"><figcaption>Bob</figcaption></figure>
-          <figure class="g g--4 reveal"><figcaption>Ondas</figcaption></figure>
-          <figure class="g g--5 reveal"><figcaption>Fade</figcaption></figure>
-          <figure class="g g--6 reveal"><figcaption>Trenzas</figcaption></figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- OPINIONES -->
-    <section class="section section--alt" id="opiniones">
-      <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow">Opiniones</p>
-          <h2>Lo que dicen los clientes</h2>
-          <p>Ejemplos de texto: cámbialos por reseñas reales de tus clientes.</p>
-        </header>
-        <div class="reviews">
-          <blockquote class="review reveal">
-            <p class="stars" aria-label="5 de 5 estrellas">★★★★★</p>
-            <p>“Por fin alguien que entiende lo que pido. Salí con el corte que llevaba años buscando.”</p>
-            <footer>— Clienta de ejemplo</footer>
-          </blockquote>
-          <blockquote class="review reveal">
-            <p class="stars" aria-label="5 de 5 estrellas">★★★★★</p>
-            <p>“El peinado de mi boda aguantó perfecto hasta las 5 de la mañana. Gracias, Leo.”</p>
-            <footer>— Novia de ejemplo</footer>
-          </blockquote>
-          <blockquote class="review reveal">
-            <p class="stars" aria-label="5 de 5 estrellas">★★★★★</p>
-            <p>“Trato cercano, puntuales y el balayage quedó natural. Repetiré seguro.”</p>
-            <footer>— Cliente de ejemplo</footer>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESERVAR -->
-    <section class="section" id="reservar">
-      <div class="container booking">
-        <div class="booking__text reveal">
-          <p class="eyebrow">Reservas</p>
-          <h2>Pide tu cita en un minuto</h2>
-          <p>Rellena el formulario y se abrirá WhatsApp con tu mensaje ya escrito. Te confirmamos la hora lo antes posible.</p>
-          <p class="muted">¿Prefieres llamar? <a href="#" data-phone-link><span data-phone-text>600 000 000</span></a></p>
-        </div>
-        <form class="form reveal" id="booking-form" novalidate>
-          <label>Nombre
-            <input name="nombre" required autocomplete="name" placeholder="Tu nombre">
-          </label>
-          <label>Servicio
-            <select name="servicio" required>
-              <option value="">Elige un servicio</option>
-              <option>Corte</option>
-              <option>Color / mechas</option>
-              <option>Peinado de evento</option>
-              <option>Novia</option>
-              <option>Tratamiento</option>
-              <option>Otro</option>
-            </select>
-          </label>
-          <div class="form__row">
-            <label>Día preferido
-              <input type="date" name="fecha" required>
-            </label>
-            <label>Franja
-              <select name="franja">
-                <option>Mañana</option>
-                <option>Tarde</option>
-                <option>Me da igual</option>
-              </select>
-            </label>
-          </div>
-          <label>Comentarios <span class="muted">(opcional)</span>
-            <textarea name="comentarios" rows="3" placeholder="Largo del pelo, idea que tienes, etc."></textarea>
-          </label>
-          <p class="form__error" role="alert" hidden>Rellena nombre, servicio y día, por favor.</p>
-          <button class="btn btn--full" type="submit">Enviar por WhatsApp</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section class="section section--dark" id="contacto">
-      <div class="container contact">
-        <div class="reveal">
-          <p class="eyebrow">Contacto</p>
-          <h2>Ven a vernos</h2>
-          <address>
-            <p data-address-text>Calle Ejemplo 1, Ciudad</p>
-            <p><a href="#" data-phone-link><span data-phone-text>600 000 000</span></a></p>
-            <p><a href="#" data-instagram-link target="_blank" rel="noopener">Instagram</a></p>
-          </address>
-          <a href="#" class="btn btn--light" data-map-link target="_blank" rel="noopener">Cómo llegar</a>
-        </div>
-        <div class="hours reveal">
-          <h3>Horario</h3>
-          <!-- Cambia el horario aquí -->
-          <dl>
-            <div><dt>Lunes</dt><dd>Cerrado</dd></div>
-            <div><dt>Martes – Viernes</dt><dd>10:00 – 14:00 · 16:30 – 20:30</dd></div>
-            <div><dt>Sábado</dt><dd>9:30 – 14:30</dd></div>
-            <div><dt>Domingo</dt><dd>Cerrado</dd></div>
-          </dl>
-          <p class="open-status" data-open-status></p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p>© <span data-year></span> Leo Peinados</p>
-      <a href="#top">Volver arriba ↑</a>
+      <!-- Cambia nombre, descripción, duración y precio de cada servicio aquí -->
+      <ul class="menu" id="menu">
+        <li data-cat="corte"><div class="menu__name"><h3>Corte mujer</h3><p>Lavado, corte y secado con forma.</p></div><span class="menu__time">45 min</span><span class="menu__price">25 €</span></li>
+        <li data-cat="corte"><div class="menu__name"><h3>Corte hombre</h3><p>Tijera o máquina, degradado y acabado.</p></div><span class="menu__time">30 min</span><span class="menu__price">14 €</span></li>
+        <li data-cat="corte"><div class="menu__name"><h3>Corte infantil</h3><p>Hasta 12 años.</p></div><span class="menu__time">20 min</span><span class="menu__price">10 €</span></li>
+        <li data-cat="color"><div class="menu__name"><h3>Tinte de raíz</h3><p>Color uniforme y cobertura de canas.</p></div><span class="menu__time">1 h 30</span><span class="menu__price">30 €</span></li>
+        <li data-cat="color"><div class="menu__name"><h3>Mechas o balayage</h3><p>Aclarado a mano alzada, natural y luminoso.</p></div><span class="menu__time">2 h 30</span><span class="menu__price">60 €</span></li>
+        <li data-cat="color"><div class="menu__name"><h3>Matiz o gloss</h3><p>Corrige tonos amarillos o naranjas y da brillo.</p></div><span class="menu__time">30 min</span><span class="menu__price">18 €</span></li>
+        <li data-cat="peinado"><div class="menu__name"><h3>Peinado de evento</h3><p>Recogido, semirrecogido u ondas.</p></div><span class="menu__time">1 h</span><span class="menu__price">35 €</span></li>
+        <li data-cat="peinado"><div class="menu__name"><h3>Novia</h3><p>Prueba previa y peinado el día de la boda.</p></div><span class="menu__time">—</span><span class="menu__price">consultar</span></li>
+        <li data-cat="peinado"><div class="menu__name"><h3>Trenzas</h3><p>De raíz, boxeadoras, espiga.</p></div><span class="menu__time">30 min</span><span class="menu__price">15 €</span></li>
+        <li data-cat="tratamiento"><div class="menu__name"><h3>Hidratación profunda</h3><p>Para pelo seco, poroso o castigado por el sol.</p></div><span class="menu__time">30 min</span><span class="menu__price">20 €</span></li>
+        <li data-cat="tratamiento"><div class="menu__name"><h3>Alisado de keratina</h3><p>Sin encrespamiento durante 3 a 5 meses.</p></div><span class="menu__time">2 h 30</span><span class="menu__price">90 €</span></li>
+      </ul>
     </div>
-  </footer>
+  </section>
 
-  <a href="#" class="wa-float" data-whatsapp-link target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
-    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
-  </a>
+  <!-- MÉTODO -->
+  <section class="band band--tint" id="metodo">
+    <div class="wrap">
+      <header class="head">
+        <p class="kicker">Cómo trabajamos</p>
+        <h2>Una cita, cuatro pasos</h2>
+      </header>
+      <ol class="steps">
+        <li><h3>Hablamos</h3><p>Nos cuentas cómo te peinas cada mañana, cuánto tiempo le dedicas y qué no quieres volver a ver.</p></li>
+        <li><h3>Miramos tu pelo</h3><p>Grosor, densidad, remolinos y estado de la fibra. Con eso sabemos qué corte o color va a funcionar.</p></li>
+        <li><h3>Trabajamos</h3><p>Sin prisas y explicándote lo que hacemos, para que puedas repetirlo en casa.</p></li>
+        <li><h3>Te llevas el truco</h3><p>Cómo secarlo, qué producto usar y cuándo volver para mantenerlo.</p></li>
+      </ol>
+    </div>
+  </section>
 
-  <script src="script.js" defer></script>
+  <!-- GALERÍA -->
+  <section class="band" id="galeria">
+    <div class="wrap">
+      <header class="head">
+        <p class="kicker">Trabajos</p>
+        <h2>Del sillón a la calle</h2>
+        <p>Espacio para tus fotos. Mientras tanto, cada hueco indica el tipo de trabajo que irá ahí.</p>
+      </header>
+      <div class="gallery">
+        <figure class="tile tile--wide tile--tall" data-tone="1"><figcaption><strong>Balayage</strong> miel sobre castaño</figcaption></figure>
+        <figure class="tile" data-tone="2"><figcaption><strong>Recogido</strong> de novia</figcaption></figure>
+        <figure class="tile" data-tone="3"><figcaption><strong>Bob</strong> a la mandíbula</figcaption></figure>
+        <figure class="tile tile--tall" data-tone="4"><figcaption><strong>Ondas</strong> al agua</figcaption></figure>
+        <figure class="tile" data-tone="5"><figcaption><strong>Degradado</strong> bajo</figcaption></figure>
+        <figure class="tile tile--wide" data-tone="6"><figcaption><strong>Trenzas</strong> de raíz</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section class="band band--tint" id="opiniones">
+    <div class="wrap">
+      <header class="head">
+        <p class="kicker">Opiniones</p>
+        <h2>Lo que cuentan al salir</h2>
+        <p class="note">Textos de ejemplo: sustitúyelos por reseñas reales de tus clientes.</p>
+      </header>
+      <div class="quotes">
+        <blockquote><p>Por fin alguien que entiende lo que pido. Salí con el corte que llevaba años buscando.</p><footer>Clienta de ejemplo · corte</footer></blockquote>
+        <blockquote><p>El recogido aguantó hasta las cinco de la mañana. En las fotos parezco yo, pero mejor.</p><footer>Novia de ejemplo · boda</footer></blockquote>
+        <blockquote><p>El balayage quedó natural y a los tres meses sigue bonito. Repetiré.</p><footer>Cliente de ejemplo · color</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVAR -->
+  <section class="band" id="reservar">
+    <div class="wrap booking">
+      <div class="booking__intro">
+        <p class="kicker">Reservar</p>
+        <h2>Elige día y hora</h2>
+        <p>Marca lo que te viene bien y te preparamos el mensaje. Lo envías por WhatsApp y te confirmamos el hueco.</p>
+        <p class="phone-line">¿Prefieres llamar? <span class="phone" data-phone-text>600 000 000</span>
+          <button type="button" class="copy" data-copy-phone>Copiar</button></p>
+      </div>
+
+      <form class="form" id="booking-form" novalidate>
+        <div class="field">
+          <label for="f-nombre">Tu nombre</label>
+          <input id="f-nombre" name="nombre" autocomplete="name" placeholder="Ej. Marta" required>
+        </div>
+        <div class="field">
+          <label for="f-servicio">Servicio</label>
+          <select id="f-servicio" name="servicio" required><option value="">Elige un servicio</option></select>
+        </div>
+        <fieldset class="field">
+          <legend>Día</legend>
+          <div class="pick" id="f-dias"></div>
+        </fieldset>
+        <fieldset class="field">
+          <legend>Hora preferida</legend>
+          <div class="pick" id="f-horas"><p class="hint">Elige primero un día.</p></div>
+        </fieldset>
+        <div class="field">
+          <label for="f-notas">Algo que debamos saber <span class="opt">(opcional)</span></label>
+          <textarea id="f-notas" name="notas" rows="2" placeholder="Largo del pelo, color actual, foto de referencia que nos enviarás…"></textarea>
+        </div>
+
+        <div class="preview">
+          <p class="preview__label">Tu mensaje</p>
+          <p class="preview__text" id="f-preview">Rellena los datos de arriba.</p>
+        </div>
+        <p class="form__error" id="f-error" role="alert" hidden></p>
+        <div class="form__actions">
+          <a class="btn btn--wa" id="f-send" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          <button type="button" class="btn btn--line" id="f-copy">Copiar mensaje</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band band--tint" id="faq">
+    <div class="wrap faq">
+      <header class="head">
+        <p class="kicker">Preguntas</p>
+        <h2>Antes de venir</h2>
+      </header>
+      <div class="faq__list">
+        <details><summary>¿Tengo que venir con el pelo lavado?</summary><p>No. Todos los servicios incluyen lavado. Para color, mejor no lavarlo el mismo día: el cuero cabelludo lo agradece.</p></details>
+        <details><summary>¿Cuánto antes reservo para una boda?</summary><p>Lo ideal son dos o tres meses, con la prueba unas semanas antes. En temporada alta (mayo a septiembre) los sábados se llenan pronto.</p></details>
+        <details><summary>¿Puedo traer una foto de referencia?</summary><p>Sí, y ayuda mucho. Envíala por WhatsApp al reservar y la vemos juntos el día de la cita.</p></details>
+        <details><summary>¿Y si llego tarde o no puedo venir?</summary><p>Avísanos cuanto antes por WhatsApp. Si es con tiempo, movemos la cita sin problema.</p></details>
+        <details><summary>¿Cómo se paga?</summary><p>En efectivo o con tarjeta al terminar.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="band band--ink" id="contacto">
+    <div class="wrap contact">
+      <div class="contact__info">
+        <p class="kicker">Contacto</p>
+        <h2>Ven a vernos</h2>
+        <dl class="contact__list">
+          <div><dt>Dirección</dt><dd data-address-text>Calle Ejemplo 1, Ciudad</dd></div>
+          <div><dt>Teléfono y WhatsApp</dt><dd><span class="phone" data-phone-text>600 000 000</span> <button type="button" class="copy" data-copy-phone>Copiar</button></dd></div>
+          <div><dt>Instagram</dt><dd><a href="#" data-instagram-link target="_blank" rel="noopener" data-instagram-text>@leopeinados</a></dd></div>
+        </dl>
+        <a href="#" class="btn btn--light" data-map-link target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+      <div class="hours">
+        <div class="hours__top"><h3>Horario</h3><span class="status" id="hours-status"></span></div>
+        <dl id="hours-list"></dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p>© <span data-year>2026</span> Leo Peinados</p>
+    <a href="#top">Volver arriba</a>
+  </div>
+</footer>
+
+<div class="dock">
+  <a href="#reservar" class="btn">Reservar</a>
+  <a href="#" class="btn btn--wa" data-whatsapp-link target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<!-- BODY:END -->
+<script src="script.js" defer></script>
 </body>
 </html>
