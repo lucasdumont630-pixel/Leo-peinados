@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://leo-peinados.vercel.app/sitemap.xml
+Sitemap: https://la-argentina-estilista.vercel.app/sitemap.xml
