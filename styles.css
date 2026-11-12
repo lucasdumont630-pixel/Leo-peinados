@@ -105,7 +105,7 @@ input, textarea { caret-color: var(--accent); }
 }
 .header.is-scrolled { border-color: var(--line); }
 .header__inner { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
-.logo { font: 700 1.5rem/1 var(--display); color: var(--ink); text-decoration: none; display: flex; align-items: baseline; gap: .3em; }
+.logo { font: 700 clamp(1.15rem, 5.2vw, 1.5rem)/1 var(--display); white-space: nowrap; color: var(--ink); text-decoration: none; display: flex; align-items: baseline; gap: .3em; }
 .logo span { font-style: italic; font-weight: 500; color: var(--accent); }
 .nav { display: flex; align-items: center; gap: 1.7rem; }
 .nav a:not(.btn) { color: var(--ink); text-decoration: none; font-weight: 500; font-size: .93rem; padding-block: .3em; border-bottom: 1.5px solid transparent; transition: border-color .2s; }

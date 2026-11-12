@@ -1,6 +1,6 @@
-# Leo Peinados
+# La Argentina Estilista
 
-Web de una página para la peluquería Leo Peinados. HTML, CSS y JS sin dependencias ni paso de compilación: abre `index.html` o súbela tal cual a cualquier hosting estático (Vercel, Netlify, GitHub Pages).
+Web de una página para la peluquería La Argentina Estilista. HTML, CSS y JS sin dependencias ni paso de compilación: abre `index.html` o súbela tal cual a cualquier hosting estático (Vercel, Netlify, GitHub Pages).
 
 ## Qué cambiar antes de publicar
 
